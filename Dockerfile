@@ -1,3 +1,12 @@
+# Base image with Node.js installed
+FROM node:14-alpine AS build
+
+# Create a working directory for the app
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
 # Install app dependencies
 RUN npm install
 
